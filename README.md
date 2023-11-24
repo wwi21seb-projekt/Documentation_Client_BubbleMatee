@@ -1,1 +1,7 @@
-# Documentation_Client_Charlie
+# Documentation_Client_BubbleMatee
+
+## Teammitglieder
+- Paul Bahde
+- Jonas Braun
+- Johanna Deike
+- Aidan Zimmer
