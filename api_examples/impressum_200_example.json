@@ -1,0 +1,16 @@
+{
+  "name": "Ihr Unternehmen",
+  "adress": "Straße, PLZ Ort",
+  "contact": {
+    "email": "info@ihrunternehmen.com",
+    "phone": "+49 123 456789"
+  },
+  "responsible": "Max Mustermann",
+  "legalForm": "GmbH",
+  "additionalInformation:": [
+    {
+      "key": "Mobiltelefon-Kevin",
+      "value": "+49123456789"
+    }
+  ]
+}

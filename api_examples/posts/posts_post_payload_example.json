@@ -1,0 +1,11 @@
+{
+  "userName": "zimmerai",
+  "text": "Hey Leute ich bin neu hier :) Hier ein Bild von R2D2",
+  "additionalMedia": [
+    {
+      "type": "picture",
+      "content": "blob/WebP"
+    }
+  ],
+  "hashtags": ["casual", "Star Wars"]
+}

@@ -1,0 +1,673 @@
+#%RAML 1.0
+---
+title: BubbleMatee
+baseUri: http://bubbleMatee.com/api/v1
+version: v1
+
+types:
+    Imprint: 
+        properties:
+            name: string
+            adress: string
+            contact:
+                properties:
+                    email: string
+                    phone: string
+            responsible: string
+            legalForm: string
+            additionalInformation?:
+                type: array
+                items:
+                    properties:
+                        key: string
+                        value: string
+    Posts: 
+        type: array
+        items: 
+            properties:
+                postId: string
+                userName: string
+                text: string
+                additionalMedia?:
+                    type: array
+                    items:
+                        properties:
+                            type: string
+                            content: any
+                createdAt: datetime
+                hashtags: 
+                    type: array
+                    items: string
+    Post: 
+        properties:
+            postId: string
+            userName: string
+            text: string
+            additionalMedia?:
+                type: array
+                items:
+                    properties:
+                        type: string
+                        content: any
+            createdAt: datetime
+            hashtags?: 
+                type: array
+                items: string
+
+    PostCreation:
+        properties:
+            userName: string
+            text: string
+            additionalMedia?:
+                type: array
+                items:
+                    properties:
+                        type: string
+                        content: any
+            hashtags?: 
+                type: array
+                items: string
+
+    UserRegistration:
+        properties: 
+            userName: string
+            password: string
+            preName: string
+            surName: string
+            birthDate: date
+            mailAdress: string
+
+    UserActivation:
+        properties: 
+            userName: string
+            mailAdress: string
+            code: string
+
+    UserLogin:
+        properties: 
+            userName: string
+            password: string
+
+    UserInformation:
+         properties: 
+            userName: string
+            preName: string
+            surName: string
+            birthDate: date
+            mailAdress: string
+            numberOfFollowers: integer
+            numberOfFollowing: integer
+
+    UserAccountInformation:
+         properties: 
+            userName: string
+            preName: string
+            surName: string
+            birthDate: date
+            mailAdress: string
+
+    User:
+        properties: 
+            userName: string
+            mailAdress: string
+    Users:
+        type: array
+        items: 
+            properties:
+                userName: string
+                mailAdress: string
+    Error:
+        properties:
+            status: integer
+            message: string
+
+    Subscribe:
+        properties:
+            userName: string
+            subscribeTo: string
+
+    PostDeletion:
+        properties:
+            postId: string
+
+/posts:
+    get:
+        description: Get all Posts specified
+        queryParameters: 
+            start:
+                description: Specify the starting pagination index
+                type: integer
+                required: true
+                example: GET {baseUri}/posts?start=1
+            end:
+                description: Specify the final pagination index
+                type: integer
+                required: true
+                example: GET {baseUri}/posts?end=49
+            sort: 
+                description: specify sorting of the posts by release Date
+                type: string
+                required: false
+                example: GET {baseUri}/posts?sort=desc
+            filter:
+                description: filter posts by content
+                type: string
+                required: false
+                example: GET {baseUri}/posts?filter="Cat Videos"
+            userName:
+                description: get posts by User
+                type: string
+                required: false
+                example: GET {baseUri}/posts?userName="Frecherenkel60"
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: !include api_examples/posts/posts_get_200_example.json
+                        type: Posts
+            400:
+                description: Bad request
+                body:
+                    application/json:
+                        example: !include api_examples/400_example.json
+                        type: Error
+            404:
+                description: No posts found
+                body:
+                    application/json:
+                        example: !include api_examples/posts/posts_get_404_example.json
+                        type: Error
+            500: 
+                description: Server Error
+                body:
+                    application/json:
+                        example: !include api_examples/500_example.json
+                        type: Error
+            503:
+                description: Server downtime
+                body:
+                    application/json:
+                        example: !include api_examples/503_example.json
+                        type: Error
+    post:
+        description: Get all Posts specified
+        body:
+            application/json:
+                example: !include api_examples/posts/posts_post_payload_example.json
+                type: PostCreation
+        responses:
+            201:
+                description: Post created successfully
+                body:
+                    application/json:
+                        example: !include api_examples/posts/posts_post_201_example.json
+                        type: Post
+            400:
+                description: Bad request
+                body:
+                    application/json:
+                        example: !include api_examples/400_example.json
+                        type: Error
+            413:
+                description: Content in Text is too large
+                body:
+                    application/json:
+                        example:  !include api_examples/posts/posts_post_413_example.json
+                        type: Error
+            415:
+                description: Unsupported Media Type uploaded
+                body:
+                    application/json:
+                        example: !include api_examples/posts/posts_post_415_example.json
+                        type: Error    
+            500: 
+                description: Server Error
+                body:
+                    application/json:
+                        example: !include api_examples/500_example.json
+                        type: Error
+            503:
+                description: Server downtime
+                body:
+                    application/json:
+                        example: !include api_examples/503_example.json
+                        type: Error
+    delete:
+        description: Delete a specific post
+        body:
+            application/json:
+                example: !include api_examples/posts/posts_delete_payload_example.json
+                type: PostDeletion
+        responses:
+            204:
+                description: Post deleted successfully
+            400:
+                description: Bad request
+                body:
+                    application/json:
+                        example: !include api_examples/400_example.json
+                        type: Error
+            401:
+                description: Not authorized to delete this post
+                body:
+                    application/json:
+                        example: !include api_examples/posts/posts_delete_401_example.json
+                        type: Error
+            404:
+                description: Post not found
+                body:
+                    application/json:
+                        example: !include api_examples/posts/posts_get_404_example.json
+                        type: Error
+            500: 
+                description: Server Error
+                body:
+                    application/json:
+                        example: !include api_examples/500_example.json
+                        type: Error
+            503:
+                description: Server downtime
+                body:
+                    application/json:
+                        example: !include api_examples/503_example.json
+                        type: Error
+
+    /myFeed/{userName}:
+        get:
+            description: Get Posts for my feed
+            queryParameters: 
+                start:
+                    description: Specify the starting pagination index
+                    type: integer
+                    required: true
+                    example: GET {baseUri}/posts?start=1
+                end:
+                    description: Specify the final pagination index
+                    type: integer
+                    required: true
+                    example: GET {baseUri}/posts?end=49
+                sort: 
+                    description: specify sorting of the posts by release Date
+                    type: string
+                    required: false
+                    example: GET {baseUri}/posts?sort=desc
+                filter:
+                    description: filter posts by content
+                    type: string
+                    required: false
+                    example: GET {baseUri}/posts?filter="Cat Videos"
+                userName:
+                    description: get posts by User
+                    type: string
+                    required: false
+                    example: GET {baseUri}/posts?userName="Frecherenkel60"
+            responses:
+                200:
+                    body:
+                        application/json:
+                            example: !include api_examples/posts/posts_get_200_example.json
+                            type: Posts
+                400:
+                    description: Bad request
+                    body:
+                        application/json:
+                            example: !include api_examples/400_example.json
+                            type: Error
+                404:
+                    description: No posts found
+                    body:
+                        application/json:
+                            example: !include api_examples/posts/posts_get_404_example.json
+                            type: Error
+                500: 
+                    description: Server Error
+                    body:
+                        application/json:
+                            example: !include api_examples/500_example.json
+                            type: Error
+                503:
+                    description: Server downtime
+                    body:
+                        application/json:
+                            example: !include api_examples/503_example.json
+                            type: Error                        
+
+
+/imprint:
+    get:
+        description: Get imprint information
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: !include api_examples/impressum_200_example.json
+                        type: Imprint
+            404:
+                description: Not found
+                body:
+                    application/json: 
+                        example: !include api_examples/impressum_404_example.json
+                        type: Error
+            503:
+                description: Service unavailable
+                body:
+                    application/json: 
+                        example: !include api_examples/503_example.json
+                        type: Error
+/user:
+    post:
+        description: sign up as a new user
+        body:
+            application/json:
+                example: !include api_examples/user/user_post_payload_exapmle.json
+                type: UserRegistration
+        responses:
+            201:
+                description: Created - User created successfully
+                body:
+                    application/json:
+                        example: !include api_examples/user/user_post_201_example.json
+                        type: User
+            400:
+                description: Bad Request - Missing or wrong data in request
+                body:
+                    application/json: 
+                        example: !include api_examples/400_example.json
+                        type: Error
+            409:
+                description: Conflict - username already in use
+                body:
+                    application/json: 
+                        example: !include api_examples/user/user_post_409_example.json
+                        type: Error
+            500:
+                description: Internal Server Error
+                body:
+                    application/json: 
+                        example: !include api_examples/500_example.json
+                        type: Error
+            503:
+                description: Service unavailable
+                body:
+                    application/json: 
+                        example: !include api_examples/503_example.json
+                        type: Error
+    put:
+        description: change user information
+        body:
+            application/json:
+                example: !include api_examples/user/user_put_payload.json
+                type: UserAccountInformation
+        responses:
+            200:
+                description: OK - Account updated successfully
+                body:
+                    application/json:
+                        example: !include api_examples/user/user_put_200_example.json
+                        type: UserAccountInformation
+            400:
+                description: Bad Request - Missing or wrong data in request
+                body:
+                    application/json: 
+                        example: !include api_examples/400_example.json
+                        type: Error
+            409:
+                description: Conflict - username already in use
+                body:
+                    application/json: 
+                        example: !include api_examples/user/user_post_409_example.json
+                        type: Error
+            500:
+                description: Internal Server Error
+                body:
+                    application/json: 
+                        example: !include api_examples/500_example.json
+                        type: Error
+            503:
+                description: Service unavailable
+                body:
+                    application/json: 
+                        example: !include api_examples/503_example.json
+                        type: Error
+    get:
+        description: get user information
+        queryParameters: 
+            userName:
+                description: Specify the user name
+                type: string
+                required: true
+                example: GET {baseUri}/user?userName=testUser
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: !include api_examples/user/user_get_200_example.json
+                        type: UserInformation
+            400:
+                description: Bad Request
+                body:
+                    application/json: 
+                        example: !include api_examples/400_example.json
+                        type: Error
+            500:
+                description: Internal Server Error
+                body:
+                    application/json: 
+                        example: !include api_examples/500_example.json
+                        type: Error
+            503:
+                description: Service unavailable
+                body:
+                    application/json: 
+                        example: !include api_examples/503_example.json
+                        type: Error
+                        
+    /{userName}:
+        /activate:
+            post:
+                description: activate user account
+                body:
+                    application/json:
+                        example: !include api_examples/user/activate/user_post_payload_exapmle.json
+                        type: UserActivation
+                responses:
+                    200:
+                        description: OK - Activation successful
+                        body:
+                            application/json:
+                                example: !include api_examples/user/activate/user_post_200_example.json
+                                type: User
+                    400:
+                        description: Bad Request - Invalid activation code
+                        body:
+                            application/json: 
+                                example: !include api_examples/user/activate/user_post_400_example.json
+                                type: Error
+                    404:
+                        description: Not Found - User not found
+                        body:
+                            application/json: 
+                                example: !include api_examples/user/activate/user_post_404_example.json
+                                type: Error
+                    410:
+                        description: Gone - code not valid anymore
+                        body:
+                            application/json: 
+                                example: !include api_examples/user/activate/user_post_410_example.json
+                                type: Error
+                    500:
+                        description: Internal Server Error
+                        body:
+                            application/json: 
+                                example: !include api_examples/500_example.json
+                                type: Error
+                    503:
+                        description: Service unavailable
+                        body:
+                            application/json: 
+                                example: !include api_examples/503_example.json
+                                type: Error 
+
+        /subscribe:
+            post:
+                description: Subscribe to a user
+                body:
+                    application/json:
+                        example: !include api_examples/user/subscriptions/user_subscribe_201_example.json
+                        type: Subscribe
+                responses:
+                    201:
+                        description: Successfully subscribed
+                        body:
+                            application/json:
+                                example: !include api_examples/user/subscriptions/user_subscribe_201_example.json
+                                type: Subscribe
+                    400:
+                        description: Bad request
+                        body:
+                            application/json:
+                                example: !include api_examples/400_example.json
+                                type: Error
+                    404:
+                        description: Not Found - User not found
+                        body:
+                            application/json: 
+                                example: !include api_examples/user/activate/user_post_404_example.json
+                                type: Error
+                    500: 
+                        description: Server Error
+                        body:
+                            application/json:
+                                example: !include api_examples/500_example.json
+                                type: Error
+                    503:
+                        description: Server downtime
+                        body:
+                            application/json:
+                                example: !include api_examples/503_example.json
+                                type: Error                         
+            delete:
+                description: Unsubscribe User
+                responses:
+                    204:
+                        description: Successfully unsubscribed
+                    400:
+                        description: Bad request
+                        body:
+                            application/json:
+                                example: !include api_examples/400_example.json
+                                type: Error
+                    404:
+                        description: User not found
+                        body:
+                            application/json:
+                                example: !include api_examples/user/activate/user_post_404_example.json
+                                type: Error
+                    500: 
+                        description: Server Error
+                        body:
+                            application/json:
+                                example: !include api_examples/500_example.json
+                                type: Error
+                    503:
+                        description: Server downtime
+                        body:
+                            application/json:
+                                example: !include api_examples/503_example.json
+                                type: Error
+
+    /login:
+        post:
+            description: activate user account
+            body:
+                application/json:
+                    example: !include api_examples/user/login/user_post_payload_example.json
+                    type: UserLogin
+            responses:
+                200:
+                    description: OK - Login successful
+                    body:
+                        application/json:
+                            example: !include api_examples/user/login/user_post_200_example.json
+                            type: User
+                400:
+                    description: Bad Request
+                    body:
+                        application/json: 
+                            example: !include api_examples/400_example.json
+                            type: Error
+                403:
+                    description: Forbidden - Account blocked
+                    body:
+                        application/json: 
+                            example: !include api_examples/user/login/user_post_403_example.json
+                            type: Error
+                404:
+                    description: Not Found - User not found
+                    body:
+                        application/json: 
+                            example: !include api_examples/user/login/user_post_404_example.json
+                            type: Error
+                500:
+                    description: Internal Server Error
+                    body:
+                        application/json: 
+                            example: !include api_examples/500_example.json
+                            type: Error
+                503:
+                    description: Service unavailable
+                    body:
+                        application/json: 
+                            example: !include api_examples/503_example.json
+                            type: Error
+
+    /search: 
+        get:
+            description: Search Users
+            queryParameters: 
+                start:
+                    description: Specify the starting pagination index
+                    type: integer
+                    required: true
+                    example: GET {baseUri}/posts?start=1
+                end:
+                    description: Specify the final pagination index
+                    type: integer
+                    required: true
+                    example: GET {baseUri}/posts?end=49
+                queryString:
+                    description: Specify string/name to search
+                    type: string
+                    required: true
+                    example: GET {baseUri}/posts?queryString="Frech"
+            responses:
+                200:
+                    body:
+                        application/json:
+                            example: !include api_examples/user/search/user_search_get_200_example.json
+                            type: Users
+                400:
+                    description: Bad request
+                    body:
+                        application/json:
+                            example: !include api_examples/400_example.json
+                            type: Error
+                404:
+                    description: No posts found
+                    body:
+                        application/json:
+                            example: !include api_examples/user/search/user_search_get_404_example.json
+                            type: Error
+                500: 
+                    description: Server Error
+                    body:
+                        application/json:
+                            example: !include api_examples/500_example.json
+                            type: Error
+                503:
+                    description: Server downtime
+                    body:
+                        application/json:
+                            example: !include api_examples/503_example.json
+                            type: Error
+

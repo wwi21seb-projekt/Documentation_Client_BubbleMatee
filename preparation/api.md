@@ -205,7 +205,7 @@ PUT - Update Account /user/{id}
 
 ## Als Nutzer möchte ich Texte posten können, um meine Gedanken zu teilen
 
-POST - Beiträge posten /posts/{userId}
+POST - Beiträge posten /posts
 
 ```json
 "payload": {
@@ -217,11 +217,11 @@ POST - Beiträge posten /posts/{userId}
 
 GET - Posts erhalten /posts
 
-Query: start, end, sort, filter, hashtag, userid
+Query: start, end, sort, filter, hashtag, userName
 
 Beispiel für Hashtags:
 
-GET - Hashtags suchen /posts?hashtag={hashtag}&userId={userId}
+GET - Hashtags suchen /posts?hashtag={hashtag}&userName={userId}
 
 ## Als Nutzer möchte ich Fotos hochladen können, um ...
 
@@ -244,9 +244,9 @@ DELETE - Beiträge delete /posts/{postId}
 
 ## Als Nutzer möchte ich die Möglichkeit haben, andere Nutzer zu suchen und ihre persönlichen Nachrichten-Feeds anzeigen zu können und zu abonnieren
 
-GET - User suchen /user/search/{userName} -> zurück liste an usern
-POST - User abonnieren /user/{myUserId}/subscribe
-DELETE - User abonnieren /user/{myUserId}/subscribe
+GET - User suchen /user/search/{querySting} -> zurück liste an usern
+POST - User abonnieren /user/{userName}/subscribe
+DELETE - User abonnieren /user/{userName}/subscribe
 
 ```json
 "payload": {
@@ -256,8 +256,8 @@ DELETE - User abonnieren /user/{myUserId}/subscribe
 
 ## Als Nutzer möchte ich einen Feed haben, um neue Beiträge meiner Freunde sehen zu können.
 
-GET - /posts/myfeed/{userId}
+GET - /posts/myfeed/{userName}
 
 ## Als Nutzer möchte ich die Option haben, Nutzerprofile einzusehen und grundlegende Informationen über sie zu erhalten.
 
-GET /user/{userId}
+GET /user/{userName}

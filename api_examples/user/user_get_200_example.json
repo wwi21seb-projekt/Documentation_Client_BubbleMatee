@@ -1,0 +1,9 @@
+{
+  "userName": "TestUser",
+  "preName": "Max",
+  "surName": "Mustermann",
+  "birthDate": "1999-11-01",
+  "mailAddress": "max.mustermaaaan@gmail.com",
+  "numberOfFollowers": 54,
+  "numberOfFollowing": 86
+}

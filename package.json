@@ -1,0 +1,17 @@
+{
+  "name": "Documentation_Client_Charlie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "open_api": "raml2html api.raml > api.html && start api.html",
+    "update_api": "raml2html api.raml > api.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "raml2html": "^7.8.0"
+  }
+}
