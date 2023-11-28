@@ -84,6 +84,7 @@ _5. Fehlerbehandlung:_
 - _201 - Created:_ Benutzer erfolgreich erstellt.
 - _400 - Bad Request:_ Fehlende oder ungültige Daten.
 - _409 - Conflict:_ Benutzername bereits vorhanden.
+- *503- Service unavailable:* Server überlastet oder down 
 
 ---
 
@@ -92,7 +93,7 @@ _1. Kontoaktivierung-Ressource:_
 - _URI:_ `/user/{id}/activate`
 - _Beschreibung:_ Aktiviert das Konto des Benutzers nach der Registrierung.
 
-_2. Methode_ - PUT
+_2. Methode_ - POST
 
 _3. Beispielanfrage:_
 
@@ -101,7 +102,7 @@ _3. Beispielanfrage:_
         "id": "UUID",
         "userName": "TestUser",
         "mailAddress": "max.mustermaaaan@gmail.com",
-        "activated": "TRUE"
+        "code": "1234"
     }
 ```
 
@@ -110,9 +111,10 @@ _4. Beispielantwort:_
 - _200 - OK:_ Konto erfolgreich aktiviert.
 
 _5. Fehlerbehandlung:_
-
+- _400 - Bad Request:_ Code ungültig
 - _404 - Not Found:_ Benutzer-ID nicht gefunden.
-- _500 - Internal Server Error:_ Serverseitiger Fehler.
+- _410 - Gone:_ Code abgelaufen
+- *503- Service unavailable:* Server überlastet oder down 
 
 ---
 
@@ -139,7 +141,9 @@ _4. Beispielantwort:_
 _5. Fehlerbehandlung:_
 
 - _401 - Unauthorized:_ Ungültige Anmeldeinformationen.
+- _403 - Forbidden:_ Account gesperrt
 - _404 - Not Found:_ Benutzer nicht gefunden.
+- *503- Service unavailable:* Server überlastet oder down 
 
 ---
 
@@ -166,7 +170,9 @@ _4. Beispielantwort:_
 _5. Fehlerbehandlung:_
 
 - _400 - Bad Request:_ Ungültige Daten.
+- _403 - Forbidden:_ Account gesperrt
 - _404 - Not Found:_ Benutzer-ID nicht gefunden.
+- *503- Service unavailable:* Server überlastet oder down 
 
 
 POST - Registrierung /user
