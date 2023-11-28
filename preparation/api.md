@@ -1,22 +1,22 @@
 # REST-Schnittstelle
 
-
 Basis URI: `https://server_{number}/api/v1`
 
 ## Als Nutzender möchte ich wissen wer diese Webseite betreibt (Impressum), um den Inhaber erreichen zu können
 
-*1. Impressum-Ressource:*
-   - *URI:* `/impressum`
-   - *Beschreibung:* Diese Ressource stellt alle relevanten Informationen für das Impressum bereit.
+_1. Impressum-Ressource:_
 
-*2. Methode*
-    - GET
+- _URI:_ `/impressum`
+- _Beschreibung:_ Diese Ressource stellt alle relevanten Informationen für das Impressum bereit.
 
-*3. Beispielanfrage:*
+_2. Methode_ - GET
+
+_3. Beispielanfrage:_
 http
 GET /impressum
 
-*4. Beispielantwort:*
+_4. Beispielantwort:_
+
 ```json
 {
     "name": "Ihr Unternehmen",
@@ -37,10 +37,11 @@ GET /impressum
 }
 ```
 
-*5. Fehlerbehandlung:*
-- *200 - OK* + impressum.json
-- *404 - Not found :* Falls die Ressource nicht gefunden wird
-- *503- Service unavailable:* Server überlastet oder down 
+_5. Fehlerbehandlung:_
+
+- _200 - OK_ + impressum.json
+- _404 - Not found :_ Falls die Ressource nicht gefunden wird
+- _503- Service unavailable:_ Server überlastet oder down
 
 ## Als Nutzer möchte ich mich mit Email und Passwort registrieren können, um einen gesicherten Zugang zu meinem Account zu haben und konfigurieren zu können
 
@@ -84,7 +85,7 @@ _5. Fehlerbehandlung:_
 - _201 - Created:_ Benutzer erfolgreich erstellt.
 - _400 - Bad Request:_ Fehlende oder ungültige Daten.
 - _409 - Conflict:_ Benutzername bereits vorhanden.
-- *503- Service unavailable:* Server überlastet oder down 
+- _503- Service unavailable:_ Server überlastet oder down
 
 ---
 
@@ -111,10 +112,11 @@ _4. Beispielantwort:_
 - _200 - OK:_ Konto erfolgreich aktiviert.
 
 _5. Fehlerbehandlung:_
+
 - _400 - Bad Request:_ Code ungültig
 - _404 - Not Found:_ Benutzer-ID nicht gefunden.
 - _410 - Gone:_ Code abgelaufen
-- *503- Service unavailable:* Server überlastet oder down 
+- _503- Service unavailable:_ Server überlastet oder down
 
 ---
 
@@ -143,7 +145,7 @@ _5. Fehlerbehandlung:_
 - _401 - Unauthorized:_ Ungültige Anmeldeinformationen.
 - _403 - Forbidden:_ Account gesperrt
 - _404 - Not Found:_ Benutzer nicht gefunden.
-- *503- Service unavailable:* Server überlastet oder down 
+- _503- Service unavailable:_ Server überlastet oder down
 
 ---
 
@@ -172,8 +174,7 @@ _5. Fehlerbehandlung:_
 - _400 - Bad Request:_ Ungültige Daten.
 - _403 - Forbidden:_ Account gesperrt
 - _404 - Not Found:_ Benutzer-ID nicht gefunden.
-- *503- Service unavailable:* Server überlastet oder down 
-
+- _503- Service unavailable:_ Server überlastet oder down
 
 POST - Registrierung /user
 
@@ -187,7 +188,9 @@ POST - Registrierung /user
     "mailAddress": "max.mustermaaaan@gmail.com"
 }
 ```
+
 201 - Created:
+
 ```json
 "body": {
     "id": "UUID",
@@ -202,12 +205,14 @@ PUT - Update Account /user/{id}
 
 ## Als Nutzer möchte ich Texte posten können, um meine Gedanken zu teilen
 
-POST - Beiträge posten /{userId}/posts
+POST - Beiträge posten /posts/{userId}
+
 ```json
 "payload": {
     "hashtags": ["trending", "foryoupage"],
 }
 ```
+
 ## Als Nutzer möchte ich die Möglichkeit haben, Hashtags zu verwenden, um meine Beiträge zu kategorisieren und leichter auffindbar zu machen.
 
 GET - Posts erhalten /posts
@@ -218,11 +223,13 @@ Beispiel für Hashtags:
 
 GET - Hashtags suchen /posts?hashtag={hashtag}&userId={userId}
 
-
 ## Als Nutzer möchte ich Fotos hochladen können, um ...
-POST - Beiträge posten /{userId}/posts
+
+POST - Beiträge posten /posts
+
 ```json
 "payload": {
+    "userId" "asdsad"
     "picture": blob/WebP???,
 }
 ```
@@ -233,8 +240,7 @@ haben wir schon
 
 ## Als Nutzer möchte ich Posts löschen können, um meine Veröffentlichungen rückgängig zu machen.
 
-DELETE - Beiträge delete /{userId}/posts/{postId}
-
+DELETE - Beiträge delete /posts/{postId}
 
 ## Als Nutzer möchte ich die Möglichkeit haben, andere Nutzer zu suchen und ihre persönlichen Nachrichten-Feeds anzeigen zu können und zu abonnieren
 
@@ -250,7 +256,7 @@ DELETE - User abonnieren /user/{myUserId}/subscribe
 
 ## Als Nutzer möchte ich einen Feed haben, um neue Beiträge meiner Freunde sehen zu können.
 
-GET - /posts/user/{myUserID}/myfeed
+GET - /posts/myfeed/{userId}
 
 ## Als Nutzer möchte ich die Option haben, Nutzerprofile einzusehen und grundlegende Informationen über sie zu erhalten.
 
