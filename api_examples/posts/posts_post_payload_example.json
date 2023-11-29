@@ -4,7 +4,8 @@
   "additionalMedia": [
     {
       "type": "picture",
-      "content": "blob/WebP"
+      "format": "png",
+      "content": "/9j/4AAQSkZJRgABAQEAAAAAAAD/4QAuRXhpZgAATU0AKgAAAAgAAkAAAAMAAAABAAgAAEABAAEAA..."
     }
   ],
   "hashtags": ["casual", "Star Wars"]

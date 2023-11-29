@@ -5,7 +5,8 @@
     "text": "Hey Leute ich bin neu hier :) Hier ein Bild von R2D2",
     "additionalMedia": {
       "type": "picture",
-      "content": "blob/WebP"
+      "format": "png",
+      "contentId": "bb79c60b-572c-4f64-ae4f-f352bf1a3ed9"
     },
     "createdAt": "28-11-28T17:00:59:123",
     "hashtags": ["casual", "Star Wars"]

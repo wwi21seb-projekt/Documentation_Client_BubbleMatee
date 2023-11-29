@@ -33,7 +33,8 @@ types:
                     items:
                         properties:
                             type: string
-                            content: any
+                            format: string
+                            contentId: uuid
                 createdAt: datetime
                 hashtags: 
                     type: array
@@ -48,7 +49,8 @@ types:
                 items:
                     properties:
                         type: string
-                        content: any
+                        format: string
+                        contentId: uuid
             createdAt: datetime
             hashtags?: 
                 type: array
@@ -63,6 +65,7 @@ types:
                 items:
                     properties:
                         type: string
+                        format: string
                         content: any
             hashtags?: 
                 type: array
@@ -130,207 +133,7 @@ types:
         properties:
             postId: string
 
-/posts:
-    get:
-        description: Get all Posts specified
-        queryParameters: 
-            start:
-                description: Specify the starting pagination index
-                type: integer
-                required: true
-                example: GET {baseUri}/posts?start=1
-            end:
-                description: Specify the final pagination index
-                type: integer
-                required: true
-                example: GET {baseUri}/posts?end=49
-            sort: 
-                description: specify sorting of the posts by release Date
-                type: string
-                required: false
-                example: GET {baseUri}/posts?sort=desc
-            filter:
-                description: filter posts by content
-                type: string
-                required: false
-                example: GET {baseUri}/posts?filter="Cat Videos"
-            userName:
-                description: get posts by User
-                type: string
-                required: false
-                example: GET {baseUri}/posts?userName="Frecherenkel60"
-        responses:
-            200:
-                body:
-                    application/json:
-                        example: !include api_examples/posts/posts_get_200_example.json
-                        type: Posts
-            400:
-                description: Bad request
-                body:
-                    application/json:
-                        example: !include api_examples/400_example.json
-                        type: Error
-            404:
-                description: No posts found
-                body:
-                    application/json:
-                        example: !include api_examples/posts/posts_get_404_example.json
-                        type: Error
-            500: 
-                description: Server Error
-                body:
-                    application/json:
-                        example: !include api_examples/500_example.json
-                        type: Error
-            503:
-                description: Server downtime
-                body:
-                    application/json:
-                        example: !include api_examples/503_example.json
-                        type: Error
-    post:
-        description: Get all Posts specified
-        body:
-            application/json:
-                example: !include api_examples/posts/posts_post_payload_example.json
-                type: PostCreation
-        responses:
-            201:
-                description: Post created successfully
-                body:
-                    application/json:
-                        example: !include api_examples/posts/posts_post_201_example.json
-                        type: Post
-            400:
-                description: Bad request
-                body:
-                    application/json:
-                        example: !include api_examples/400_example.json
-                        type: Error
-            413:
-                description: Content in Text is too large
-                body:
-                    application/json:
-                        example:  !include api_examples/posts/posts_post_413_example.json
-                        type: Error
-            415:
-                description: Unsupported Media Type uploaded
-                body:
-                    application/json:
-                        example: !include api_examples/posts/posts_post_415_example.json
-                        type: Error    
-            500: 
-                description: Server Error
-                body:
-                    application/json:
-                        example: !include api_examples/500_example.json
-                        type: Error
-            503:
-                description: Server downtime
-                body:
-                    application/json:
-                        example: !include api_examples/503_example.json
-                        type: Error
-    delete:
-        description: Delete a specific post
-        body:
-            application/json:
-                example: !include api_examples/posts/posts_delete_payload_example.json
-                type: PostDeletion
-        responses:
-            204:
-                description: Post deleted successfully
-            400:
-                description: Bad request
-                body:
-                    application/json:
-                        example: !include api_examples/400_example.json
-                        type: Error
-            401:
-                description: Not authorized to delete this post
-                body:
-                    application/json:
-                        example: !include api_examples/posts/posts_delete_401_example.json
-                        type: Error
-            404:
-                description: Post not found
-                body:
-                    application/json:
-                        example: !include api_examples/posts/posts_get_404_example.json
-                        type: Error
-            500: 
-                description: Server Error
-                body:
-                    application/json:
-                        example: !include api_examples/500_example.json
-                        type: Error
-            503:
-                description: Server downtime
-                body:
-                    application/json:
-                        example: !include api_examples/503_example.json
-                        type: Error
-
-    /myFeed/{userName}:
-        get:
-            description: Get Posts for my feed
-            queryParameters: 
-                start:
-                    description: Specify the starting pagination index
-                    type: integer
-                    required: true
-                    example: GET {baseUri}/posts?start=1
-                end:
-                    description: Specify the final pagination index
-                    type: integer
-                    required: true
-                    example: GET {baseUri}/posts?end=49
-                sort: 
-                    description: specify sorting of the posts by release Date
-                    type: string
-                    required: false
-                    example: GET {baseUri}/posts?sort=desc
-                filter:
-                    description: filter posts by content
-                    type: string
-                    required: false
-                    example: GET {baseUri}/posts?filter="Cat Videos"
-                userName:
-                    description: get posts by User
-                    type: string
-                    required: false
-                    example: GET {baseUri}/posts?userName="Frecherenkel60"
-            responses:
-                200:
-                    body:
-                        application/json:
-                            example: !include api_examples/posts/posts_get_200_example.json
-                            type: Posts
-                400:
-                    description: Bad request
-                    body:
-                        application/json:
-                            example: !include api_examples/400_example.json
-                            type: Error
-                404:
-                    description: No posts found
-                    body:
-                        application/json:
-                            example: !include api_examples/posts/posts_get_404_example.json
-                            type: Error
-                500: 
-                    description: Server Error
-                    body:
-                        application/json:
-                            example: !include api_examples/500_example.json
-                            type: Error
-                503:
-                    description: Server downtime
-                    body:
-                        application/json:
-                            example: !include api_examples/503_example.json
-                            type: Error                        
+                    
 
 
 /imprint:
@@ -342,11 +145,23 @@ types:
                     application/json:
                         example: !include api_examples/impressum_200_example.json
                         type: Imprint
+            400:
+                description: Bad Request - Missing or wrong data in request
+                body:
+                    application/json: 
+                        example: !include api_examples/400_example.json
+                        type: Error
             404:
                 description: Not found
                 body:
                     application/json: 
                         example: !include api_examples/impressum_404_example.json
+                        type: Error
+            500:
+                description: Internal Server Error
+                body:
+                    application/json: 
+                        example: !include api_examples/500_example.json
                         type: Error
             503:
                 description: Service unavailable
@@ -354,9 +169,10 @@ types:
                     application/json: 
                         example: !include api_examples/503_example.json
                         type: Error
+
 /user:
     post:
-        description: sign up as a new user
+        description: Sign up as a new user
         body:
             application/json:
                 example: !include api_examples/user/user_post_payload_exapmle.json
@@ -393,7 +209,15 @@ types:
                         example: !include api_examples/503_example.json
                         type: Error
     put:
-        description: change user information
+        description: Change user information
+        headers:
+            Authorization:
+                description: Bearer Token with JWT payload for authentication
+                type: string
+                required: true
+                example: |
+                    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkw...[weitere Teile]...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
         body:
             application/json:
                 example: !include api_examples/user/user_put_payload.json
@@ -410,6 +234,18 @@ types:
                 body:
                     application/json: 
                         example: !include api_examples/400_example.json
+                        type: Error
+            401:
+                description: Unauthorized
+                body:
+                    application/json: 
+                        example: !include api_examples/401_example.json
+                        type: Error
+            403:
+                description: Forbidden 
+                body:
+                    application/json: 
+                        example: !include api_examples/403_example.json
                         type: Error
             409:
                 description: Conflict - username already in use
@@ -430,7 +266,15 @@ types:
                         example: !include api_examples/503_example.json
                         type: Error
     get:
-        description: get user information
+        description: Get user information
+        headers:
+            Authorization:
+                description: Bearer Token with JWT payload for authentication
+                type: string
+                required: true
+                example: |
+                    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkw...[weitere Teile]...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
         queryParameters: 
             userName:
                 description: Specify the user name
@@ -449,6 +293,12 @@ types:
                     application/json: 
                         example: !include api_examples/400_example.json
                         type: Error
+            401:
+                description: Unauthorized
+                body:
+                    application/json: 
+                        example: !include api_examples/401_example.json
+                        type: Error
             500:
                 description: Internal Server Error
                 body:
@@ -465,7 +315,7 @@ types:
     /{userName}:
         /activate:
             post:
-                description: activate user account
+                description: Activate user account
                 body:
                     application/json:
                         example: !include api_examples/user/activate/user_post_payload_exapmle.json
@@ -511,6 +361,14 @@ types:
         /subscribe:
             post:
                 description: Subscribe to a user
+                headers:
+                    Authorization:
+                        description: Bearer Token with JWT payload for authentication
+                        type: string
+                        required: true
+                        example: |
+                            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkw...[weitere Teile]...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
                 body:
                     application/json:
                         example: !include api_examples/user/subscriptions/user_subscribe_201_example.json
@@ -527,6 +385,18 @@ types:
                         body:
                             application/json:
                                 example: !include api_examples/400_example.json
+                                type: Error
+                    401:
+                        description: Unauthorized
+                        body:
+                            application/json: 
+                                example: !include api_examples/401_example.json
+                                type: Error
+                    403:
+                        description: Forbidden 
+                        body:
+                            application/json: 
+                                example: !include api_examples/403_example.json
                                 type: Error
                     404:
                         description: Not Found - User not found
@@ -548,6 +418,14 @@ types:
                                 type: Error                         
             delete:
                 description: Unsubscribe User
+                headers:
+                    Authorization:
+                        description: Bearer Token with JWT payload for authentication
+                        type: string
+                        required: true
+                        example: |
+                            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkw...[weitere Teile]...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
                 responses:
                     204:
                         description: Successfully unsubscribed
@@ -556,6 +434,18 @@ types:
                         body:
                             application/json:
                                 example: !include api_examples/400_example.json
+                                type: Error
+                    401:
+                        description: Unauthorized
+                        body:
+                            application/json: 
+                                example: !include api_examples/401_example.json
+                                type: Error
+                    403:
+                        description: Forbidden 
+                        body:
+                            application/json: 
+                                example: !include api_examples/403_example.json
                                 type: Error
                     404:
                         description: User not found
@@ -578,7 +468,7 @@ types:
 
     /login:
         post:
-            description: activate user account
+            description: Login to user account
             body:
                 application/json:
                     example: !include api_examples/user/login/user_post_payload_example.json
@@ -624,6 +514,14 @@ types:
     /search: 
         get:
             description: Search Users
+            headers:
+                Authorization:
+                    description: Bearer Token with JWT payload for authentication
+                    type: string
+                    required: true
+                    example: |
+                        Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkw...[weitere Teile]...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
             queryParameters: 
                 start:
                     description: Specify the starting pagination index
@@ -652,6 +550,12 @@ types:
                         application/json:
                             example: !include api_examples/400_example.json
                             type: Error
+                401:
+                    description: Unauthorized
+                    body:
+                        application/json: 
+                            example: !include api_examples/401_example.json
+                            type: Error
                 404:
                     description: No posts found
                     body:
@@ -671,3 +575,315 @@ types:
                             example: !include api_examples/503_example.json
                             type: Error
 
+/posts:
+    get:
+        description: Get all Posts specified
+        headers:
+            Authorization:
+                description: Bearer Token with JWT payload for authentication
+                type: string
+                required: true
+                example: |
+                    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkw...[weitere Teile]...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+        queryParameters: 
+            start:
+                description: Specify the starting pagination index
+                type: integer
+                required: true
+                example: GET {baseUri}/posts?start=1
+            end:
+                description: Specify the final pagination index
+                type: integer
+                required: true
+                example: GET {baseUri}/posts?end=49
+            sort: 
+                description: specify sorting of the posts by release Date
+                type: string
+                required: false
+                example: GET {baseUri}/posts?sort=desc
+            filter:
+                description: filter posts by content
+                type: string
+                required: false
+                example: GET {baseUri}/posts?filter="Cat Videos"
+            userName:
+                description: get posts by User
+                type: string
+                required: false
+                example: GET {baseUri}/posts?userName="Frecherenkel60"
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: !include api_examples/posts/posts_get_200_example.json
+                        type: Posts
+            400:
+                description: Bad request
+                body:
+                    application/json:
+                        example: !include api_examples/400_example.json
+                        type: Error
+            401:
+                description: Unauthorized
+                body:
+                    application/json: 
+                        example: !include api_examples/401_example.json
+                        type: Error
+            404:
+                description: No posts found
+                body:
+                    application/json:
+                        example: !include api_examples/posts/posts_get_404_example.json
+                        type: Error
+            500: 
+                description: Server Error
+                body:
+                    application/json:
+                        example: !include api_examples/500_example.json
+                        type: Error
+            503:
+                description: Server downtime
+                body:
+                    application/json:
+                        example: !include api_examples/503_example.json
+                        type: Error
+    post:
+        description: Upload a post
+        headers:
+            Authorization:
+                description: Bearer Token with JWT payload for authentication
+                type: string
+                required: true
+                example: |
+                    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkw...[weitere Teile]...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+        body:
+            application/json:
+                example: !include api_examples/posts/posts_post_payload_example.json
+                type: PostCreation
+        responses:
+            201:
+                description: Post created successfully
+                body:
+                    application/json:
+                        example: !include api_examples/posts/posts_post_201_example.json
+                        type: Post
+            400:
+                description: Bad request
+                body:
+                    application/json:
+                        example: !include api_examples/400_example.json
+                        type: Error
+            401:
+                description: Unauthorized
+                body:
+                    application/json: 
+                        example: !include api_examples/401_example.json
+                        type: Error
+            403:
+                description: Forbidden 
+                body:
+                    application/json: 
+                        example: !include api_examples/403_example.json
+                        type: Error
+            413:
+                description: Content in Text is too large
+                body:
+                    application/json:
+                        example:  !include api_examples/posts/posts_post_413_example.json
+                        type: Error
+            415:
+                description: Unsupported Media Type uploaded
+                body:
+                    application/json:
+                        example: !include api_examples/posts/posts_post_415_example.json
+                        type: Error    
+            500: 
+                description: Server Error
+                body:
+                    application/json:
+                        example: !include api_examples/500_example.json
+                        type: Error
+            503:
+                description: Server downtime
+                body:
+                    application/json:
+                        example: !include api_examples/503_example.json
+                        type: Error
+    delete:
+        description: Delete a specific post
+        headers:
+            Authorization:
+                description: Bearer Token with JWT payload for authentication
+                type: string
+                required: true
+                example: |
+                    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkw...[weitere Teile]...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+        body:
+            application/json:
+                example: !include api_examples/posts/posts_delete_payload_example.json
+                type: PostDeletion
+        responses:
+            204:
+                description: Post deleted successfully
+            400:
+                description: Bad request
+                body:
+                    application/json:
+                        example: !include api_examples/400_example.json
+                        type: Error
+            401:
+                description: Unauthorized
+                body:
+                    application/json: 
+                        example: !include api_examples/401_example.json
+                        type: Error
+            403:
+                description: Forbidden 
+                body:
+                    application/json: 
+                        example: !include api_examples/403_example.json
+                        type: Error
+            404:
+                description: Post not found
+                body:
+                    application/json:
+                        example: !include api_examples/posts/posts_get_404_example.json
+                        type: Error
+            500: 
+                description: Server Error
+                body:
+                    application/json:
+                        example: !include api_examples/500_example.json
+                        type: Error
+            503:
+                description: Server downtime
+                body:
+                    application/json:
+                        example: !include api_examples/503_example.json
+                        type: Error
+
+    /myFeed/{userName}:
+        get:
+            description: Get Posts for my feed
+            headers:
+                Authorization:
+                    description: Bearer Token with JWT payload for authentication
+                    type: string
+                    required: true
+                    example: |
+                        Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkw...[weitere Teile]...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+            queryParameters: 
+                start:
+                    description: Specify the starting pagination index
+                    type: integer
+                    required: true
+                    example: GET {baseUri}/posts?start=1
+                end:
+                    description: Specify the final pagination index
+                    type: integer
+                    required: true
+                    example: GET {baseUri}/posts?end=49
+                sort: 
+                    description: specify sorting of the posts by release Date
+                    type: string
+                    required: false
+                    example: GET {baseUri}/posts?sort=desc
+                filter:
+                    description: filter posts by content
+                    type: string
+                    required: false
+                    example: GET {baseUri}/posts?filter="Cat Videos"
+                userName:
+                    description: get posts by User
+                    type: string
+                    required: false
+                    example: GET {baseUri}/posts?userName="Frecherenkel60"
+            responses:
+                200:
+                    body:
+                        application/json:
+                            example: !include api_examples/posts/posts_get_200_example.json
+                            type: Posts
+                400:
+                    description: Bad request
+                    body:
+                        application/json:
+                            example: !include api_examples/400_example.json
+                            type: Error
+                401:
+                    description: Unauthorized
+                    body:
+                        application/json: 
+                            example: !include api_examples/401_example.json
+                            type: Error
+                403:
+                    description: Forbidden 
+                    body:
+                        application/json: 
+                            example: !include api_examples/403_example.json
+                            type: Error
+                404:
+                    description: No posts found
+                    body:
+                        application/json:
+                            example: !include api_examples/posts/posts_get_404_example.json
+                            type: Error
+                500: 
+                    description: Server Error
+                    body:
+                        application/json:
+                            example: !include api_examples/500_example.json
+                            type: Error
+                503:
+                    description: Server downtime
+                    body:
+                        application/json:
+                            example: !include api_examples/503_example.json
+                            type: Error    
+
+/image/{imageId}:
+    get:
+        description: Get image of a post
+        headers:
+            Authorization:
+                description: Bearer Token with JWT payload for authentication
+                type: string
+                required: true
+                example: |
+                    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkw...[weitere Teile]...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+        responses:
+            200:
+                body:
+                    image/webp:
+                        example: | 
+                            [binary data of the WebP image]
+                        type: binary
+            400:
+                description: Bad request
+                body:
+                    application/json:
+                        example: !include api_examples/400_example.json
+                        type: Error
+            401:
+                description: Unauthorized
+                body:
+                    application/json: 
+                        example: !include api_examples/401_example.json
+                        type: Error
+            500: 
+                description: Server Error
+                body:
+                    application/json:
+                        example: !include api_examples/500_example.json
+                        type: Error
+            503:
+                description: Server downtime
+                body:
+                    application/json:
+                        example: !include api_examples/503_example.json
+                        type: Error    
