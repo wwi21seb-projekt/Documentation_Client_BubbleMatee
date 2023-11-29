@@ -38,7 +38,8 @@ types:
                 createdAt: datetime
                 hashtags: 
                     type: array
-                    items: string
+                    items: 
+                        type: string
     Post: 
         properties:
             postId: string
@@ -54,7 +55,8 @@ types:
             createdAt: datetime
             hashtags?: 
                 type: array
-                items: string
+                items: 
+                    type: string
 
     PostCreation:
         properties:
@@ -69,12 +71,13 @@ types:
                         content: any
             hashtags?: 
                 type: array
-                items: string
+                items: 
+                    type: string
 
     UserRegistration:
         properties: 
             userName: string
-            password: string
+            passwordHash: string
             preName: string
             surName: string
             birthDate: date
@@ -82,14 +85,12 @@ types:
 
     UserActivation:
         properties: 
-            userName: string
-            mailAdress: string
             code: string
 
     UserLogin:
         properties: 
             userName: string
-            password: string
+            passwordHash: string
 
     UserInformation:
          properties: 
@@ -183,7 +184,7 @@ types:
                 body:
                     application/json:
                         example: !include api_examples/user/user_post_201_example.json
-                        type: User
+                        type: UserAccountInformation
             400:
                 description: Bad Request - Missing or wrong data in request
                 body:
@@ -221,7 +222,7 @@ types:
         body:
             application/json:
                 example: !include api_examples/user/user_put_payload.json
-                type: UserAccountInformation
+                type: UserRegistration
         responses:
             200:
                 description: OK - Account updated successfully
@@ -246,6 +247,12 @@ types:
                 body:
                     application/json: 
                         example: !include api_examples/403_example.json
+                        type: Error
+            404:
+                description: Not found 
+                body:
+                    application/json: 
+                        example: !include api_examples/user/user_put_404_example.json
                         type: Error
             409:
                 description: Conflict - username already in use
@@ -610,11 +617,11 @@ types:
                 type: string
                 required: false
                 example: GET {baseUri}/posts?sort=desc
-            filter:
+            hashtag:
                 description: filter posts by content
                 type: string
                 required: false
-                example: GET {baseUri}/posts?filter="Cat Videos"
+                example: GET {baseUri}/posts?hashtag="Cat Videos"
             userName:
                 description: get posts by User
                 type: string
