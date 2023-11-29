@@ -476,6 +476,14 @@ types:
             responses:
                 200:
                     description: OK - Login successful
+                    headers:
+                        Authorization:
+                            description: Bearer Token with JWT payload for authentication
+                            type: string
+                            required: true
+                            example: |
+                                Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkw...[weitere Teile]...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
                     body:
                         application/json:
                             example: !include api_examples/user/login/user_post_200_example.json

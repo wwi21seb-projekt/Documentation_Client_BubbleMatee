@@ -389,7 +389,8 @@ pre code {
   "userName": "TestUser",
   "password": "qwerty"
 }
-</code></pre></div></div><div class="tab-pane" id="user_login_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><p>OK - Login successful</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>userName</strong>: <em><span class="required">required</span>(string)</em></li><li><strong>mailAdress</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div></div><div class="tab-pane" id="user_login_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><p>OK - Login successful</p><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em><span class="required">required</span>(string)</em><p>Bearer Token with JWT payload for authentication</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkw...[weitere Teile]...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+</code></pre></div></li></ul><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>userName</strong>: <em><span class="required">required</span>(string)</em></li><li><strong>mailAdress</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "userName": "TestUser",
   "mailAddress": "max.mustermaaaan@gmail.com"
 }
