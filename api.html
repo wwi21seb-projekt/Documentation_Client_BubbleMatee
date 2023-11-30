@@ -186,19 +186,15 @@ pre code {
     }
   ]
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad Request - Missing or wrong data in request</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
-  "status": 400,
-  "message": "Bad request"
-}
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Not found</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Not found - Imprint does not exist</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "status": 404,
   "message": "Impressum not found"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
@@ -225,11 +221,11 @@ pre code {
   "status": 409,
   "message": "Username already in use"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
@@ -253,11 +249,11 @@ pre code {
   "status": 400,
   "message": "Bad request"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized - User is not logged in</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "status": 401,
   "message": "User not authorized"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden - User tries to change data of a different Account</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "status": 403,
   "message": "Forbidden"
 }
@@ -269,11 +265,11 @@ pre code {
   "status": 409,
   "message": "Username already in use"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
@@ -295,11 +291,11 @@ pre code {
   "status": 401,
   "message": "User not authorized"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
@@ -322,11 +318,11 @@ pre code {
   "status": 410,
   "message": "Code not valid anymore"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
@@ -355,11 +351,11 @@ pre code {
   "status": 404,
   "message": "User not found"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Server downtime</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
@@ -380,11 +376,11 @@ pre code {
   "status": 404,
   "message": "User not found"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Server downtime</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
@@ -397,7 +393,7 @@ pre code {
   "userName": "TestUser",
   "mailAddress": "max.mustermaaaan@gmail.com"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad Request</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad Request - Password and username do not match</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "status": 400,
   "message": "Bad request"
 }
@@ -409,11 +405,11 @@ pre code {
   "status": 404,
   "message": "User not found"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
@@ -436,11 +432,11 @@ pre code {
   "message": "No Users found",
   "status": 404
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Server downtime</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
@@ -459,11 +455,11 @@ pre code {
     "hashtags": ["casual", "Star Wars"]
   }
 ]
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad request</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad request - False or Missing Data</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "status": 400,
   "message": "Bad request"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized - User is not logged in</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "status": 401,
   "message": "User not authorized"
 }
@@ -471,11 +467,11 @@ pre code {
   "message": "Post not found",
   "status": 404
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Server downtime</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
@@ -508,15 +504,15 @@ pre code {
   "status": 400,
   "message": "Bad request"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized - User is not logged in</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "status": 401,
   "message": "User not authorized"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden - User tries to post for a different User</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "status": 403,
   "message": "Forbidden"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/413" target="_blank">413</a></h2><p>Content in Text is too large</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/413" target="_blank">413</a></h2><p>Content is too large</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Content too large",
   "status": 413
 }
@@ -524,11 +520,11 @@ pre code {
   "message": "Unsupported Media Type",
   "status": 415
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Server downtime</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
@@ -552,11 +548,11 @@ pre code {
   "message": "Post not found",
   "status": 404
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Server downtime</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
@@ -591,11 +587,11 @@ pre code {
   "message": "Post not found",
   "status": 404
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Server downtime</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
@@ -609,11 +605,11 @@ pre code {
   "status": 401,
   "message": "User not authorized"
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Server Error</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error - Exception in Backend (f.E. Programming - Misttake)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Internal Server Error",
   "status": 500
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Server downtime</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/503" target="_blank">503</a></h2><p>Service unavailable - f.E. Backend cann&#39;t connect to Database</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>status</strong>: <em><span class="required">required</span>(integer)</em></li><li><strong>message</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Service unavailable",
   "status": 503
 }
