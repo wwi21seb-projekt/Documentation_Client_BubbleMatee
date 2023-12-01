@@ -1,5 +1,6 @@
 {
-  "userName": "NewUserName",
+  "oldUserName": "OldUserName",
+  "newUserName": "NewUserName",
   "mailAddress": "new.email@gmail.com",
   "preName": "Max",
   "surName": "Mustermann",

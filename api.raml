@@ -35,7 +35,7 @@ types:
                             type: string
                             format: string
                             contentId: uuid
-                createdAt: datetime
+                createdAt: datetime (UTC)
                 hashtags: 
                     type: array
                     items: 
@@ -495,6 +495,12 @@ types:
                         application/json: 
                             example: !include api_examples/400_example.json
                             type: Error
+                401:
+                    description: Unauthorized - Email not verified
+                    body:
+                        application/json: 
+                            example: !include api_examples/401_example.json
+                            type: Error
                 403:
                     description: Forbidden - Account blocked
                     body:
@@ -627,6 +633,12 @@ types:
                     application/json:
                         example: !include api_examples/posts/posts_get_200_example.json
                         type: Posts
+            204:
+                description: No content - No posts found
+                body:
+                    application/json:
+                        example: !include api_examples/posts/posts_get_204_example.json
+                        type: Error
             400:
                 description: Bad request - False or Missing Data
                 body:
@@ -638,12 +650,6 @@ types:
                 body:
                     application/json: 
                         example: !include api_examples/401_example.json
-                        type: Error
-            404:
-                description: Not found - No posts found
-                body:
-                    application/json:
-                        example: !include api_examples/posts/posts_get_404_example.json
                         type: Error
             500: 
                 description: Internal Server Error - Exception in Backend (f.E. Programming - Mistake)
