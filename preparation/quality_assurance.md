@@ -1,4 +1,28 @@
-# Qualitätssicherungsmaßnahmen
+# Qualitätssicherungsmaßnahmen 
+
+## Accessibility
+- Aspekte ausarbeiten - Web Content Accessibility Guidelines
+- Welche Aspekte mit Pa11y automatisiert testbar 
+- Manuelle Tests?
+
+## Usability 
+- 10 heuristiken
+- Checkliste im Pull-Request - Abhaken durch Reviewer
+- Checkliste im Sprint für gesamte App - zu viert überprüfen
+- Template für Usability-Tests
+- Usability Tests: 
+	- alle 2 Sprints (Ende 2ter Sprint)
+	- mit 4 Personen (jeder mit einer Person, nicht zwei mal gleiche Person hintereinander)
+	- Aufgaben definiert von allen zu jedem Sprint, eventuell alte anpassen
+
+
+## Fragen 
+- Wie funktioniert das austauschbare Backend? Kann der Nutzer im Frontend auswählen? Code verändern?
+- Build- Lokal? Wie genau?
+
+
+
+# Qualitätssicherungsmaßnahmen Aidans Notizen
 
 ## Nutzbarkeit (Usability)
 
