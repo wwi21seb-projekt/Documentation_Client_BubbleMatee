@@ -1,10 +1,5 @@
 # Qualitätssicherungsmaßnahmen 
 
-## Accessibility
-- Aspekte ausarbeiten - Web Content Accessibility Guidelines
-- Welche Aspekte mit Pa11y automatisiert testbar 
-- Manuelle Tests?
-
 ## Usability 
 - 10 heuristiken
 - Checkliste im Pull-Request - Abhaken durch Reviewer
@@ -15,14 +10,32 @@
 	- mit 4 Personen (jeder mit einer Person, nicht zwei mal gleiche Person hintereinander)
 	- Aufgaben definiert von allen zu jedem Sprint, eventuell alte anpassen
 
+## Maintainability
 
-## Fragen 
-- Wie funktioniert das austauschbare Backend? Kann der Nutzer im Frontend auswählen? Code verändern?
-- Build- Lokal? Wie genau?
+[TypescriptBP](https://docs.aws.amazon.com/prescriptive-guidance/latest/best-practices-cdk-typescript-iac/typescript-best-practices.html)
+
+[SvelteBP](https://kim-jangwook.medium.com/best-practices-for-organizing-and-structuring-svelte-applications-5f85a3d5a6f5)
+
+[CleanCodeMetriken](https://www.adesso.de/de/news/blog/clean-code-prinzipien-und-die-messbarkeit-durch-metriken.jsp)
+
+[CodeMetrikPipeline](https://devblogs.microsoft.com/dotnet/automate-code-metrics-and-class-diagrams-with-github-actions/)
+
+- Code Metriken festlegen, die überprüft werden
+- Best Practices definieren
+- Versionskontrolle mit Git
+- Dependency Management wie renovate bot
+- Code Analysen, um Best Practises einzuhalten
+- Code Formatierungen
+- Code Reviews - 4-Augen Prinzip 
+- Verpflichtendes Entwicklungswerkzeug für Best Practices wie [Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=de)
+- Checklisten: 
+- - Entwickler: "Ich habe self review gemacht und dabei best Practices beachtet"
+- - Entwickler und Reviewer: "Ich habe meine Funktionalität mit den festgelegten Entwicklungswerkzeugen überprüft" 
+- - Entwickler: "Ich habe habe code formatierungen und überprüfungen lokal durchgeführt"
+- - Reviewer: "Ich habe den Code nach Best Practices überprüft"
 
 
-
-# Qualitätssicherungsmaßnahmen Aidans Notizen
+# Qualitätssicherungsmaßnahmen (veraltet)
 
 ## Nutzbarkeit (Usability)
 
@@ -42,6 +55,10 @@
 ### 3. Nutzer Dokumentation/Hilfe?
 
 ## Barrierefreiheit (Accessibility)
+- Aspekte ausarbeiten - Web Content Accessibility Guidelines
+- Welche Aspekte mit Pa11y automatisiert testbar 
+- Manuelle Tests?
+
 
 - [Accessibility Runs](https://docs.gitlab.com/ee/ci/testing/accessibility_testing.html) in CI/CD Pipeline
 - Nutzung von speziellen [Dev Tools über Accessibility](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?pli=1)
