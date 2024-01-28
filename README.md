@@ -31,6 +31,10 @@
 
 ## API Documentation
 
+Die Dokumentation der aktiven API-Schnittstellen ist [hier](https://www.postman.com/wwi21seb-server-alpha/workspace/wwi21seb-projekt-konzeption-realisierung) zu finden.
+
+### Ehemals geplante API Schnittstellen (deprecated)
+
 To open the Documentation run once:
 
 ```
