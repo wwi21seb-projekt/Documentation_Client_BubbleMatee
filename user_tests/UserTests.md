@@ -13,7 +13,7 @@ Die Fragen und Aufgaben werden mündlich gestellt und das Protokoll von oben ist
 
 | Tester\*in | Umgebung         | Protokoll                                                                                                         |
 | ---------- | ---------------- | ----------------------------------------------------------------------------------------------------------------- |
-| Johanna    | Handy light mode | [Link](https://sap-my.sharepoint.com/:w:/p/johanna_deike/Ec4r0QAuCFZOqSKVEOJxjGkBlWymRwg5327QOzlib5HVQg?e=lvWV1I) |
+| Johanna    | Handy Light Mode | [Link](https://sap-my.sharepoint.com/:w:/p/johanna_deike/Ec4r0QAuCFZOqSKVEOJxjGkBlWymRwg5327QOzlib5HVQg?e=lvWV1I) |
 | Aidan      | Desktop Light Mode | [Link](https://sap-my.sharepoint.com/:w:/p/aidan_zimmer/EVpv47mjqnVGhYmq-Uyi0nEBxKkCUBGFkKzgJ1jNEWvRbA?e=QQwRXX) |
 | Paul       | Handy Darkmode   | [Link](https://erlebnisweltsport-my.sharepoint.com/:w:/g/personal/paul_bahde_erlebniswelt-sport_de/EZilxD-rCfdGqG60sBeOIvABr2gaNiYDfsUDLZyRvZ6Olw?e=Y0O0AO)|
 | Jonas      | Desktop Darkmode | Link                                                                                                              |
