@@ -18,6 +18,8 @@ Die Fragen und Aufgaben werden mündlich gestellt und das Protokoll von oben ist
 | Paul       | Handy Darkmode     | [Link](https://erlebnisweltsport-my.sharepoint.com/:w:/g/personal/paul_bahde_erlebniswelt-sport_de/EZilxD-rCfdGqG60sBeOIvABr2gaNiYDfsUDLZyRvZ6Olw?e=Y0O0AO) |
 | Jonas      | Desktop Darkmode   | [Link](https://sap-my.sharepoint.com/:w:/p/johanna_deike/ESfjThNBF_NEgTb774Rz4poBkvLIjVqqvYgK5rGviRmGSQ?e=pg7cyG)                                           |
 
+Fazit des ersten User Test: [Link](https://erlebnisweltsport-my.sharepoint.com/:w:/g/personal/paul_bahde_erlebniswelt-sport_de/EXPMlcGLFVxEi5dyWtQS0VABWarIVpyZdm7Mw5VwrWmNhw?e=pPZFAF)
+
 ## User Tests 2
 
 Coming soon ...
